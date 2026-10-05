@@ -1,3 +1,19 @@
+> **Experimental branch: `keyless-companion`. Do not run this against a live pool.**
+>
+> This is a test fork of oracle-core for running an oracle with **no spending key on the
+> operator's server**. Posting uses a posting-only key fenced by an on-chain authority box,
+> and refresh is designed to need no owner key online. The work in progress here:
+> a posting action, a keyless refresh action, one oracle script per operator, and the
+> contracts as compiled trees.
+>
+> - Design, contracts and tests: [cannonQ/companion-authority-box](https://github.com/cannonQ/companion-authority-box)
+> - Status: nothing on this branch beyond upstream `develop` (`d38bc44`) yet; it will be tested
+>   on a dummy pool on mainnet with dummy tokens before anything else.
+> - Not affiliated with or endorsed by the upstream maintainers. Upstream oracle-core:
+>   [ergoplatform/oracle-core](https://github.com/ergoplatform/oracle-core)
+>
+> Everything below is the upstream README, unchanged.
+
 # Oracle Core v2.0
 
 The oracle core requires that the user has access to a public node with activated extra option to create txs. Furthermore, each oracle core is designed to work with only a single oracle pool. If an operator runs several oracles in several oracle pools then a single full node can be used, but several instances of oracle cores must be run (and set with different API ports).
